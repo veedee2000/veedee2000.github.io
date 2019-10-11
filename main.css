@@ -363,6 +363,26 @@ li{
     transform: rotate(45deg);
 }
 
+.icon-container-center{
+    margin-left: auto;
+    margin-right: auto;
+    width: 10rem;
+    height: 10rem;
+    justify-content: center;
+    border: 3px solid  yellow;
+    background-color: purple;
+    margin-bottom: 2rem;
+    display: flex;
+    transform: rotate(45deg);
+}
+
+.icon-container-center i{
+    color: antiquewhite;
+    font-size: 5rem;
+    margin: auto;
+    transform: rotate(-45deg);
+}
+
 .icon-container i{
     color: antiquewhite;
     font-size: 5rem;
