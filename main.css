@@ -13,7 +13,761 @@ html{
 }
 
 body{
+    width: 100%;/* Start global */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+    color: lightgray;
+}
+
+body{
     width: 100%;
+    height: 100%;
+    background: url(images/sitebg.jpg) no-repeat center fixed;
+    background-size: cover;
+
+}
+
+section{
+    padding: 6rem 0;
+}
+
+a{
+    text-decoration: none;
+    color: lightgray;
+}
+
+p{
+    font-size: 1.8rem;
+
+}
+
+img{
+    width: 100%;
+}
+/* End global */
+
+
+/* Start Reusable */
+
+.container{
+    width: 90%;
+    max-width: 420rem;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.section-heading{
+    text-align: center;
+    margin-bottom: 10rem;
+}
+
+.section-heading h1{
+    font-size: 3.5rem;
+    color: rgba(255, 255, 255, 3);
+    text-transform: uppercase;
+    font-weight: 300;
+    position: relative;
+    margin-bottom: 1rem;
+
+}
+
+.section-heading h1::before,
+.section-heading h1::after{
+    content: '';
+    position: absolute;
+    bottom: -.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.75);
+
+}
+
+section-heading h1::before{
+    width: 10rem;
+    height: 3px;
+    border-radius: .8rem;
+}
+
+section-heading h1::after{
+    width: 1.5rem;
+    height: 1.5px;
+    border-radius: 100%;
+    bottom: -1rem
+}
+
+.section-heading h6{
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+
+.has-margin-right{
+    margin-right: 5rem; 
+}
+
+/* End Reusable */
+
+
+/* Start Header */
+
+header{
+    width: 100%;
+    height: 100vh;
+}
+
+.top-nav{
+     width: 100%;
+     height: 100vh;
+     position: fixed;
+     top: -1000vh;
+     z-index: 50;
+     background-color: #16162d;
+     border-bottom-left-radius: 100%;
+     border-bottom-right-radius: 100%;
+     transition: all 650ms cubic-bezier(1,0,0,1);
+
+}
+
+.nav-list{
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+li{
+    margin: 0 2rem;
+}
+
+.nav-link{
+    font-family: fantasy, cursive, sans-serif;
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.nav-link:hover, 
+.nav-link:focus{
+    background: linear-gradient(to top, yellow, pink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.top-nav.open{
+    top: 0;
+    border-radius: initial;
+}
+
+.menu-toggler{
+    position: absolute;
+    top: 5rem;
+    right: 5rem;
+    width: 5rem;
+    height: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1500;
+    transition: transform 650ms ease-out;
+
+}
+
+.menu-toggler.open{
+    transform: rotate(-45deg);
+}
+
+.bar{
+    background: linear-gradient(to right, yellow, pink);
+    width: 100%;
+    height: 4px;
+    border-radius: .8rem;
+}
+
+.bar.half{
+    width: 50%;
+}
+
+.bar.start{
+    transform-origin: right;
+    transition: transform 650ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+}
+
+.open .bar.start{
+    transform: rotate(-450deg) translateX(0.8rem);
+}
+
+.bar.end{
+    align-self: flex-end;
+    transform-origin: left;
+    transition: transform 650ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+}
+
+.open .bar.end{
+    transform: rotate(-450deg) translateX(-0.8rem);
+}
+
+.landing-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+}
+
+.landing-text h1{
+    font-size: 10rem;
+    font-family: fantasy, cursive;
+    background: linear-gradient(to top, yellow, pink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 1rem;
+    user-select: none;
+}
+
+.landing-text h6{
+    font-size: 2rem;
+    font-weight: 300;
+    background: linear-gradient(to top, azure, burlywood);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 1rem;
+    user-select: none;
+}
+
+/* End Header */
+
+
+/* Start About */
+
+.about .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-heading{
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 0;
+    margin-bottom: 6rem;
+}
+
+.about-heading h1{
+    margin-top: 10rem;
+    font-size: 10rem;
+    color: purple;
+    opacity: .3;
+}
+
+.about-heading h6{
+    font-size: 2rem;
+    font-weight: 300;
+    color: maroon;
+}
+
+.about-description{
+    font-size: 3rem;
+    font-family: fantasy,sans-serif;
+    color: burlywood;
+}
+
+.about-description-list{
+    font-size: 2.5rem;
+    font-family: fantasy, cursive;
+    color: burlywood;
+}
+
+.profile-img{
+    flex: 1;
+    margin-right: 5rem;
+}
+
+.about-details{
+    flex: 1;
+}
+
+.social-media{
+    margin-top: 5rem;
+}
+
+.social-media i{
+    font-size: 5rem;
+    transition: color 650ms;
+}
+
+.fa-facebook-square:hover{
+    color: black;
+}
+
+.fa-twitter-square:hover{
+    color: black;
+}
+
+.fa-linkedin:hover{
+    color: black;
+}
+
+/* End About */
+
+
+/* Start Services */
+
+.my.skills{
+    margin-top: 10rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 2.5rem;
+    text-align: center;
+
+
+}
+
+.skill{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.skill p{
+    font-family: sans-serif;
+    justify-content: center;
+}
+
+.skill-right{
+    float: right;
+    font-family: fantasy, cursive;
+    text-align: center;
+}
+
+.skill-right p{
+    font-family: sans-serif;
+}
+
+.skill h1{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 2rem -2px 2rem 0;
+    font-family: fantasy, cursive;
+}
+
+.skill p{
+    font-size: 1.5rem;
+}
+
+.icon-container{
+    width: 10rem;
+    height: 10rem;
+    border: 3px solid  yellow;
+    background-color: purple;
+    margin-bottom: 2rem;
+    display: flex;
+    transform: rotate(45deg);
+}
+
+.icon-container-center{
+    margin-left: auto;
+    margin-right: auto;
+    width: 10rem;
+    height: 10rem;
+    justify-content: center;
+    border: 3px solid  yellow;
+    background-color: purple;
+    margin-bottom: 2rem;
+    display: flex;
+    transform: rotate(45deg);
+}
+
+.icon-container-center i{
+    color: antiquewhite;
+    font-size: 5rem;
+    margin: auto;
+    transform: rotate(-45deg);
+}
+
+.icon-container i{
+    color: antiquewhite;
+    font-size: 5rem;
+    margin: auto;
+    transform: rotate(-45deg);
+}
+
+
+
+/* End Services */
+
+
+/* Start Portfolio */
+.portfolio-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+
+.portolio-item:last-child{
+    margin-bottom: 0;
+}
+
+.portfolio-img{
+    flex: 1;
+}
+
+.portfolio-description{
+    flex: 1;
+}
+
+.portfolio-description h1{
+    font-size: 3rem;
+    font-weight: 300;
+    font-family: fantasy, cursive;
+    color: brown;
+    margin: 1rem 0;
+}
+
+.portfolio-description h6{
+    font-size: 1.5rem;
+    color: azure;
+    text-transform: uppercase;
+    font-weight: 300;
+    opacity: .3;
+}
+
+.portfolio-description p{
+    background: linear-gradient(to top, lightgray, pink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 1rem;
+    user-select: none;
+}
+
+.portfolio-description .cta{
+    display: inline-block;
+    margin-top: 2.5rem;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: cadetblue;
+}
+
+.portfolio-description .cta-hover{
+    color: purple;
+}
+
+.list-fill-for-projects {
+    font-size: 1.4rem;
+    background: linear-gradient(to top, lightgray, purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 1rem;
+    user-select: none;
+}
+
+.list-fill-for-projects a{
+    color: purple;
+    display: inline-block;
+    margin-top: 2.5rem;
+    margin-left: 1rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+
+/* End Portfolio */
+
+
+/* Start timeline */
+
+.timeline ul{
+    border-left: 4px solid maroon;
+    border-radius: .8rem;
+    background-color: rgba(0,0,0,.05);
+    position: relative;
+    padding: 5rem;
+    list-style: none;
+    text-align: left;
+    width: 70%;
+}
+
+.timeline h1{
+    font-size: 1.2rem;
+    font-family: fantasy, cursive;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: azure;
+}
+
+.timeline p{
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.timeline .date{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    position: relative;
+}
+
+.timeline .date:last-of-type{
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border: none;
+}
+
+.timeline .date::before,
+.timeline .date::after{
+    position: absolute;
+    display: absolute;
+    display: block;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.timeline .date::before{
+    content: attr(data-date);
+    left: -21rem;
+    text-align: right;
+    min-width: 12rem;
+    font-size: 1.5rem;
+}
+
+.timeline .date::after{
+    content: '';
+    box-shadow: 0 0 0 4px slateblue;
+    border-radius: 100%;
+    left: -8rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color:maroon;
+}
+
+/* End timeline */
+
+/* Start Contact */
+
+
+.form{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.label-font{
+    font-family: fantasy, cursive;
+    color: chocolate;
+    font-size: 1.8rem;
+}
+
+input,
+select,
+textarea{
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    outline-color: pink;
+}
+
+input[type="submit"]{
+    width: initial;
+    background-color: pink;
+    color: maroon;
+    padding: 1rem 2rem;
+    border-radius: .8rem;
+    cursor: pointer;
+    transition: background-color 650ms;
+}
+
+input[type="submit"]:hover{
+    color: black;
+    background-color: purple;
+}
+
+/* End Contact */
+
+
+.copyright{
+    width: 100%;
+    text-align: center;
+    background-color: black;
+    padding: 2rem 0;
+    position: relative;
+}
+
+.up{
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background-color:purple;
+    top: -2.5rem;
+    right: 5rem;
+    border-radius: 100%;
+    display: flex;
+    animation: pulse 2s infinite;
+    cursor: pointer;
+}
+
+.up i{
+    color: black;
+    font-size: 2rem;
+    margin: auto;
+}
+
+.copyright p{
+    font-size: 1.4rem;
+    font-family: fantasy, cursive;
+    color: blanchedalmond;
+}
+
+/* Start Animations */
+
+@keyframes pulse{
+    0%{
+        box-shadow: 0 0 0 0 rgba(253, 87, 191, 0.99);
+    }
+    70%{
+        box-shadow: 0 0 0 2rem rgba(253, 87, 191, 0);
+    }
+    100%{
+        box-shadow: 0 0 0 0 rgba(253, 87, 191, 0);
+    }
+} 
+
+/* End Animations */
+
+/* Media Queries */
+
+/* @media screen and (max-width: 768px){
+    body{
+        width: 100%;
+        height: 100%;
+        background: url("images/sitebg.jpg") no-repeat center fixed;
+        background-size: cover;
+    }
+
+    .landing-text h1{
+        font-size: 15rem;
+    }
+
+    .landing-text h6{
+        font-size: 1.7rem;
+    }
+
+    .nav-list{
+        flex-direction: column;
+    }
+
+    li{
+        margin: 2rem 0;
+    }
+
+    .nav-link{
+        font-size: 4.5rem;
+    }
+
+    .about-heading{
+        font-size: 8rem;
+    }
+
+    .section-heading h1{
+        font-size: 3rem;
+    }
+
+    .about-details .nav-list{
+        flex-direction: initial;
+    }
+
+    .about-details li{
+        margin: 0 2rem;
+    }
+
+    .icon-container i{
+        font-size: 4rem;
+    }
+
+    .timeline ul{
+        margin: 0 0 0 auto;
+    }
+
+    .timeline .data::before{
+        left: -20rem;
+    }
+
+    .timeline .date::after{
+        left: -5.9rem
+    } 
+}  */
+
+@media screen and (max-width: 600px){
+
+    .menu-toggler{
+        top: 2rem;
+        right: 2rem;
+    }
+
+    .landing-text h1{
+        font-size: 8rem;
+    }
+
+    .landing-text h6{
+        font-size: 1.4rem;
+    }
+
+    .nav-link{
+        font-size: 3.5rem;
+    }
+
+    .about .container{
+        flex-direction: column;
+    }
+
+    .profile-img{
+        margin: 0 0 7rem 0;
+    }
+
+    .portfolio-item{
+        flex-direction: column;
+    }
+
+    .portfolio-img{
+        margin: 0 0 2rem 0;
+        order: 1;
+    }
+
+    .portfolio-description{
+        margin: 0;
+        order: 2;
+    }
+
+    .timeline p{
+        font-size: 1.6rem;
+    }
+
+    .timeline .date::before{
+        font-size: 1.4rem;
+    }
+
+    form{
+        width: 100%;
+    }
+
+    .up{
+        right: 2rem;
+    }
+}
     height: 100%;
     background: url(images/sitebg.jpg) no-repeat center fixed;
     background-size: cover;
