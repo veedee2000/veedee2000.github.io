@@ -254,6 +254,7 @@ li{
 .about-heading h1{
     margin-top: 10rem;
     font-size: 10rem;
+    -webkit-text-stroke: 1px black;
     color: purple;
     opacity: .3;
 }
