@@ -274,7 +274,8 @@ li{
 
 .about-description-list{
     font-size: 1.5rem;
-    font-family: fantasy, cursive;
+    /* font-family: fantasy, cursive;*/
+    font-family: Arial, Helvetica, sans-serif;
     color: burlywood;
 }
 
