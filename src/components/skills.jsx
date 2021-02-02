@@ -8,10 +8,33 @@ export default class Skills extends Component{
 
         this.state = {
             techs: [{
-                'name': 'Web Development',
-                'summary': 'Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et'
+                'name': 'Data Structures and Algorithms',
+            },
+            {
+                'name': 'Web Development'
+            },
+            {
+                'name': 'Git'
+            },
+            {
+                'name': 'C / C++'
+            },
+            {
+                'name': 'Python'
+            },
+            {
+                'name': 'Java'
+            },
+            {
+                'name': 'Object Oriented Programming'
+            },
+            {
+                'name': 'DBMS'
+            },
+            {
+                'name': 'Operating System'
             }
-        ] // Array of object {name, summary}
+        ]
         }
     }
 

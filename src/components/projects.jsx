@@ -8,11 +8,12 @@ export default class Projects extends Component{
 
         this.state = {
             projects: [{
-				'name': 'Leetcode Quiz App',
+                'name': 'Quiz App',
+                'github': 'https://github.com/veedee2000/leetcode-quiz-app',
 				'link': 'https://interviewquiz.netlify.app/',
-                'summary': 'Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et'
+                'summary': 'Simple and lightweight Quiz App for Interview Preparation'
             }
-        ] // Array of object {name, summary}
+        ]
         }
     }
 
@@ -28,9 +29,9 @@ export default class Projects extends Component{
                     </div>
                     </div>
                     <div className="row row-pt-md">
-                        {this.state.projects.map((project, index) => (
-                            <EachProject information = {project} key = {index} index = {index}></EachProject>
-                        ))}
+                    {this.state.projects.map((project, index) => (
+                        <EachProject information = {project} key = {index} index = {index}></EachProject>
+                    ))}
                     </div>
                 </div>
                 </section>

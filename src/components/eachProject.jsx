@@ -7,6 +7,7 @@ export default class EachProject extends Component {
         this.state = {
             name: this.props.information.name,
             summary: this.props.information.summary,
+            github: this.props.information.github,
             link: this.props.information.link,
             index : this.props.index
         }
@@ -14,24 +15,17 @@ export default class EachProject extends Component {
 
     render(){
 
-        let icons = ["far fa-lightbulb", "fab fa-accusoft", "far fa-file-code", "fas fa-laptop", "fas fa-book", "fas fa-bookmark"]
-        icons.reverse()
-
-        console.log(this.state.index)
-
         return(
-            <div className="col-md-4 text-center animate-box">
-                <div className={"services color-" + (Number(this.state.index + 4))}>
-                <span className="icon">
-                    <i className={icons[Number(this.state.index)]} />
-                </span>
-                <div className="desc">
+                <div className="col-md-4 text-center animate-box">
+                <div className="card card-1">
                     <h3>{this.state.name}</h3>
                     <p>{this.state.summary}</p>
-                    <a href = {this.state.link} target="_blank"><u>View Project</u></a>
+                        <div className="row">
+                            <a href = {this.state.link} target="_blank" className="fas fa-link fa-lg col-sm-6"></a>
+                            <a href = {this.state.github} target="_blank" className="fab fa-github fa-lg col-sm-6"></a>
+                        </div>
                 </div>
                 </div>
-            </div>
         )
     }
 }

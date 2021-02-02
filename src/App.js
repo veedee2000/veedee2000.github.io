@@ -17,10 +17,10 @@ class App extends Component {
 				<div id="colorlib-main">
 					<About></About>
           <Skills></Skills>
-          <Education></Education>
-					<Experience></Experience>
           <Projects></Projects>
-          	</div>
+					<Experience></Experience>
+          <Education></Education>
+        </div>
       	</div>
       </div>
     );

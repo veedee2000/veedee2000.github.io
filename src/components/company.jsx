@@ -24,8 +24,7 @@ export default class Company extends Component{
                 </div>
                 <div className="timeline-label">
                     <h2>{this.state.name} <span>{this.state.start} - {this.state.end}</span></h2>
-                    <span>{this.state.role}</span>
-                    <p></p>
+                    <strong>{this.state.role}</strong>
                     <p>{this.state.summary}</p>
                 </div>
                 </div>
